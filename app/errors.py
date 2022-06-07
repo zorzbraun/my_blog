@@ -5,7 +5,8 @@ from app import app, db
 def not_found_error(error):
     return render_template('404.html'), 404
 
+
 @app.errorhandler(500)
-def internal_server(error):
+def internal_error(error):
     db.session.rollback()
     return render_template('500.html'), 500

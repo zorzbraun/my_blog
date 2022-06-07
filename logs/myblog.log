@@ -1,0 +1,79 @@
+2022-06-01 14:45:15,988 ERROR: Exception on /reset_password_request [POST] [in /Users/vladimirbankovic/Desktop/my_blog/venv/lib/python3.9/site-packages/flask/app.py:1457]
+Traceback (most recent call last):
+  File "/Users/vladimirbankovic/Desktop/my_blog/venv/lib/python3.9/site-packages/flask/app.py", line 2073, in wsgi_app
+    response = self.full_dispatch_request()
+  File "/Users/vladimirbankovic/Desktop/my_blog/venv/lib/python3.9/site-packages/flask/app.py", line 1518, in full_dispatch_request
+    rv = self.handle_user_exception(e)
+  File "/Users/vladimirbankovic/Desktop/my_blog/venv/lib/python3.9/site-packages/flask/app.py", line 1516, in full_dispatch_request
+    rv = self.dispatch_request()
+  File "/Users/vladimirbankovic/Desktop/my_blog/venv/lib/python3.9/site-packages/flask/app.py", line 1502, in dispatch_request
+    return self.ensure_sync(self.view_functions[rule.endpoint])(**req.view_args)
+  File "/Users/vladimirbankovic/Desktop/my_blog/app/routes.py", line 175, in reset_password_request
+    send_password_reset_email(user)
+  File "/Users/vladimirbankovic/Desktop/my_blog/app/email.py", line 19, in send_password_reset_email
+    send_email('[My Blog] Reset Your Password',
+TypeError: send_email() got multiple values for argument 'sender'
+2022-06-01 14:47:44,424 INFO: My Blog startup [in /Users/vladimirbankovic/Desktop/my_blog/app/__init__.py:45]
+2022-06-01 14:47:56,668 INFO: My Blog startup [in /Users/vladimirbankovic/Desktop/my_blog/app/__init__.py:45]
+2022-06-01 14:48:19,111 ERROR: Exception on /reset_password_request [POST] [in /Users/vladimirbankovic/Desktop/my_blog/venv/lib/python3.9/site-packages/flask/app.py:1457]
+Traceback (most recent call last):
+  File "/Users/vladimirbankovic/Desktop/my_blog/venv/lib/python3.9/site-packages/flask/app.py", line 2073, in wsgi_app
+    response = self.full_dispatch_request()
+  File "/Users/vladimirbankovic/Desktop/my_blog/venv/lib/python3.9/site-packages/flask/app.py", line 1518, in full_dispatch_request
+    rv = self.handle_user_exception(e)
+  File "/Users/vladimirbankovic/Desktop/my_blog/venv/lib/python3.9/site-packages/flask/app.py", line 1516, in full_dispatch_request
+    rv = self.dispatch_request()
+  File "/Users/vladimirbankovic/Desktop/my_blog/venv/lib/python3.9/site-packages/flask/app.py", line 1502, in dispatch_request
+    return self.ensure_sync(self.view_functions[rule.endpoint])(**req.view_args)
+  File "/Users/vladimirbankovic/Desktop/my_blog/app/routes.py", line 175, in reset_password_request
+    send_password_reset_email(user)
+  File "/Users/vladimirbankovic/Desktop/my_blog/app/email.py", line 19, in send_password_reset_email
+    send_email(subject='[My Blog] Reset Your Password',
+  File "/Users/vladimirbankovic/Desktop/my_blog/app/email.py", line 13, in send_email
+    html.body = html_body
+NameError: name 'html' is not defined
+2022-06-01 14:52:36,605 INFO: My Blog startup [in /Users/vladimirbankovic/Desktop/my_blog/app/__init__.py:45]
+2022-06-01 14:52:45,187 ERROR: Exception on /reset_password_request [POST] [in /Users/vladimirbankovic/Desktop/my_blog/venv/lib/python3.9/site-packages/flask/app.py:1457]
+Traceback (most recent call last):
+  File "/Users/vladimirbankovic/Desktop/my_blog/venv/lib/python3.9/site-packages/flask_mail.py", line 492, in send
+    message.send(connection)
+  File "/Users/vladimirbankovic/Desktop/my_blog/venv/lib/python3.9/site-packages/flask_mail.py", line 427, in send
+    connection.send(self)
+  File "/Users/vladimirbankovic/Desktop/my_blog/venv/lib/python3.9/site-packages/flask_mail.py", line 177, in send
+    assert message.sender, (
+AssertionError: The message does not specify a sender and a default sender has not been configured
+
+During handling of the above exception, another exception occurred:
+
+Traceback (most recent call last):
+  File "/Users/vladimirbankovic/Desktop/my_blog/venv/lib/python3.9/site-packages/flask/app.py", line 2073, in wsgi_app
+    response = self.full_dispatch_request()
+  File "/Users/vladimirbankovic/Desktop/my_blog/venv/lib/python3.9/site-packages/flask/app.py", line 1518, in full_dispatch_request
+    rv = self.handle_user_exception(e)
+  File "/Users/vladimirbankovic/Desktop/my_blog/venv/lib/python3.9/site-packages/flask/app.py", line 1516, in full_dispatch_request
+    rv = self.dispatch_request()
+  File "/Users/vladimirbankovic/Desktop/my_blog/venv/lib/python3.9/site-packages/flask/app.py", line 1502, in dispatch_request
+    return self.ensure_sync(self.view_functions[rule.endpoint])(**req.view_args)
+  File "/Users/vladimirbankovic/Desktop/my_blog/app/routes.py", line 175, in reset_password_request
+    send_password_reset_email(user)
+  File "/Users/vladimirbankovic/Desktop/my_blog/app/email.py", line 19, in send_password_reset_email
+    send_email(subject='[My Blog] Reset Your Password',
+  File "/Users/vladimirbankovic/Desktop/my_blog/app/email.py", line 14, in send_email
+    mail.send(msg)
+  File "/Users/vladimirbankovic/Desktop/my_blog/venv/lib/python3.9/site-packages/flask_mail.py", line 492, in send
+    message.send(connection)
+  File "/Users/vladimirbankovic/Desktop/my_blog/venv/lib/python3.9/site-packages/flask_mail.py", line 152, in __exit__
+    self.host.quit()
+  File "/opt/homebrew/Cellar/python@3.9/3.9.10/Frameworks/Python.framework/Versions/3.9/lib/python3.9/smtplib.py", line 1004, in quit
+    res = self.docmd("quit")
+  File "/opt/homebrew/Cellar/python@3.9/3.9.10/Frameworks/Python.framework/Versions/3.9/lib/python3.9/smtplib.py", line 431, in docmd
+    self.putcmd(cmd, args)
+  File "/opt/homebrew/Cellar/python@3.9/3.9.10/Frameworks/Python.framework/Versions/3.9/lib/python3.9/smtplib.py", line 378, in putcmd
+    self.send(f'{s}{CRLF}')
+  File "/opt/homebrew/Cellar/python@3.9/3.9.10/Frameworks/Python.framework/Versions/3.9/lib/python3.9/smtplib.py", line 365, in send
+    raise SMTPServerDisconnected('please run connect() first')
+smtplib.SMTPServerDisconnected: please run connect() first
+2022-06-01 15:07:04,855 INFO: myblog startup [in /Users/vladimirbankovic/Desktop/my_blog/app/__init__.py:45]
+2022-06-01 20:17:19,679 INFO: myblog startup [in /Users/vladimirbankovic/Desktop/my_blog/app/__init__.py:47]
+2022-06-02 20:47:24,851 INFO: myblog startup [in /Users/vladimirbankovic/Desktop/my_blog/app/__init__.py:49]
+2022-06-03 15:04:18,961 INFO: myblog startup [in /Users/vladimirbankovic/Desktop/my_blog/app/__init__.py:49]
