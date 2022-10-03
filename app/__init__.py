@@ -6,6 +6,7 @@ from flask_sqlalchemy import SQLAlchemy
 from flask_migrate import Migrate
 from flask_login import LoginManager
 from flask_mail import Mail
+from app.main import routes
 from config import Config
 from flask_bootstrap import Bootstrap
 from flask_moment import Moment
@@ -48,4 +49,4 @@ if not app.debug:
     app.logger.setLevel(logging.INFO)
     app.logger.info('myblog startup')
 
-from app import routes, models, errors
+from app import models, errors
